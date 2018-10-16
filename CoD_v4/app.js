@@ -1,28 +1,36 @@
+const express = require('express')
+const app = express()
+const port = 3304
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, ()  => {})
+
 // app.js
 
-var express = require("express"); /*express = Uncaught reference error - Needs to be fixed*/
-var bodyParser = require("body-parser");
-var taskController = require("./controller/TaskController");
-var WSJFController = require("./controller/WSJFController");
+// const express = require("express"); /*express = Uncaught reference error - Needs to be fixed. This has to run in node. javascript does not understand */
+/* bodyParser = require("body-parser");
+/* taskController = require("./controller/TaskController"),
+WSJFController = require("./controller/WSJFController");
 
 
 
 
 // db instance connection
-require("./config/db");
-
+require ("./config/db");
+const port = 3000
 const app = express();
 
-const port = process.env.PORT || 3304;
-var mongoose = require("mongoose");
+const port = process.env.PORT || 3304,
+mongoose = require ("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:3304/node-demo");
 app.use(bodyParser.urlencoded({ extended: true })); /*bodyParser is not defined: I NEED TO FIX THAT*/
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 // API ENDPOINTS
 
-app
+/* app
   .route("/tasks")
   .get(taskController.listAllTasks)
   .post(taskController.createNewTask);
@@ -34,7 +42,7 @@ app
   .delete(taskController.deleteTask);
 /* I NEED TO FINISH THIS. I CREATED A FILE CALLED WSJFitem.js in the model folder to define the model and pass the form data in the mongodb. The model route is defined in the html file in the form as action attribute
   */
-app
+/* app
     .route("/post_WSJF_item")
     .get(WSJFController.listAllWSJFtems)
     .post(WSJFController.createWSJFItem);
@@ -46,8 +54,8 @@ app
 app
   .route("/post_WSJF_item/:WSJF_item_id") */
 
-
+/* app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
-});
+}); */
