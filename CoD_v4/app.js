@@ -12,13 +12,13 @@ const WSJFController = require("./controller/WSJFController");
 
 // db instance connection
 require ("./config/db");
-const port = 3304;
+const port = 3306;
 const app = express();
 
 // const port = process.env.PORT || 3304,
 mongoose = require ("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:3304/node-demo");
+mongoose.connect("mongodb://localhost:3306/node-demo");
 app.use(bodyParser.urlencoded({ extended: true })); /*bodyParser is not defined: I NEED TO FIX THAT*/
 app.use(bodyParser.json());
 
